@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as soup
 
 from urllib.request import urlopen as uReq
 
-import bs4
+
 
 headers = {'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Brave Chrome/83.0.4103.116 Safari/537.36'}
 
@@ -29,6 +29,8 @@ containers = bs41.find_all('div', {'col-md-3 p-0'})
 
 
 
+
+
 for container in containers:
     p_name = container.find_all('span', {'class' : 'clsgetname'})
     productname = p_name[0].text
@@ -51,7 +53,7 @@ for container in containers:
         total_discount = 'Not found'
 
     
-
+    
     print('Product name is', productname)
     print('Product Mrp is', offer_price)
     print('Product actual price', actual_price)
@@ -61,7 +63,6 @@ for container in containers:
     print()
 
 
-   
 
   
 
